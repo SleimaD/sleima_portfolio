@@ -1,5 +1,5 @@
 import React from 'react'
-import { bagelFatOne } from '../font'
+import { bagelFatOne } from './../font'
 import { MdEmail } from "react-icons/md";
 import { IoPhonePortrait } from "react-icons/io5";
 import { FaLocationDot } from "react-icons/fa6";

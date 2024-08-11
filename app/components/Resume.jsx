@@ -44,11 +44,11 @@ function Resume() {
                 <p className='text-[0.9rem] font-mono'>Completed intensive Full Stack Developer training at MolenGeek, gaining front-end and back-end skills through hands-on projects. Developed technical expertise and a collaborative work ethic, preparing for real-world web development challenges.</p>
               </div>
               <div className="timeline-component shadow-inner timeline-content">
-                <h3 className='font-bold font-serif mb-2 '>Bachelor's Degree in Business Informatics</h3>
+                <h3 className='font-bold font-serif mb-2 '>Bachelor Degree in Business Informatics</h3>
 
                 <p className='text-[0.9rem] mb-4'>Isfce, Brussels (Jan 2021 - Jun 2023)</p>
 
-                <p className='text-[0.9rem] font-mono'>Bachelor's degree in Business Informatics, focusing on IT and business process integration, covering database management, systems analysis, software development, and strategic IT management.</p>
+                <p className='text-[0.9rem] font-mono'>Bachelor degree in Business Informatics, focusing on IT and business process integration, covering database management, systems analysis, software development, and strategic IT management.</p>
               </div>
               <div className="timeline-middle">
                   <div className="timeline-circle"></div>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Navbar from './Navbar'
-import Works from '../works/page';
+import Works from './../works/page';
 import Resume from './Resume';
 
 function Maincontent() {

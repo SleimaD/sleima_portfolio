@@ -1,9 +1,9 @@
 "use client"
 import React from 'react'
-import { bagelFatOne } from '../font'
+import { bagelFatOne } from './../font'
 import Image from 'next/image'
 import Link from 'next/link'
-import worksData from './../json/works.json'
+import worksData from './../json/works'
 import { useRouter } from 'next/navigation'
 
 const Works = () => {

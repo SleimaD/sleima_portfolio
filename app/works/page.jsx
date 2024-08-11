@@ -4,7 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import worksData from './../json/works'
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
 import {Bagel_Fat_One} from 'next/font/google'
 
 
@@ -16,8 +16,8 @@ export const bagelFatOne  = Bagel_Fat_One ({
 
 
 const Works = () => {
-    const router = useRouter()
-
+    // const router = useRouter()
+ 
   return (
     <div className={` relative text-white mt-[6rem] mb-16 `}>
         <div className='flex justify-center w-full'>   

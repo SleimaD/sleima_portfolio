@@ -1,23 +1,25 @@
 "use client"
+import { useState } from "react"
 import { bagelFatOne } from "../font"
 import Link from "next/link"
+import Resume from "./Resume"
+import Works from "../works/page"
 
 
-const Navbar = () => {
-  return (
-    <nav className="flex max-[400px]:flex-col max-[400px]:gap-2 items-center justify-between  mb-5 text-white bg-[#5c118150] p-5 backdrop-blur-sm shadow-xl shadow-[#a56ec350] m-0 tracking-wider text-lg">
+const Navbar = ({ setActiveComponent, activeComponent }) => {
+  
+
+
+  return ( 
+    <nav className="flex max-[400px]:flex-col max-[400px]:gap-2 items-center justify-end  mb-5 text-white  ≈ m-0 tracking-wider text-lg">
         
-        <div className={` text-[1.5rem] ${bagelFatOne.className}`}>Sleima Ducros</div>
-
-        <div className={` flex justify-center items-center gap-8 p-2 mr-5 `}> 
-            <button className={`bg-[#512d65] hover:bg-[#aa5bd1] max-[400px]:text-[0.8rem] shadow-inner text-white max-[400px]: p-[0.5rem] px-3 rounded-xl ${bagelFatOne.className}`}><Link href="/skills">My Skills</Link></button>
-            <button className={`bg-[#512d65] hover:bg-[#aa5bd1] max-[400px]:text-[0.8rem] shadow-inner text-white p-[0.5rem] px-3 rounded-xl ${bagelFatOne.className}`}><Link className=" w-full h-full" href="/works">My Works</Link></button>
-            <button className={`bg-[#512d65] hover:bg-[#aa5bd1] max-[400px]:text-[0.8rem] shadow-inner text-white p-[0.5rem] px-3 rounded-xl ${bagelFatOne.className}`}><Link href="/designs">My Designs</Link></button>
+        <div className={` w-[30%] bg-[#343333] flex justify-center items-center gap-8 p-5  rounded-bl-lg rounded-tr-lg ${bagelFatOne.className} `}> 
+          <Link href="#" onClick={() => setActiveComponent('works')} className={`${activeComponent === 'works' ? 'text-[#954dad]' : 'text-[#ffffff]'} text-2xl `}>Works</Link>
+          <Link href="#" onClick={() => setActiveComponent('resume')} className={`${activeComponent === 'resume' ? 'text-[#954dad]' : 'text-[#ffffff]'} text-2xl `}>Resume</Link>
         </div>
-
        
     </nav> 
   )     
 }
 
-export default Navbar 
+export default Navbar;

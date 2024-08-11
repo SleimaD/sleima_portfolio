@@ -1,64 +1,73 @@
 [
-    {
-      "name": "HTML",
-      "image": "/html.png"
-    },
-    {
-      "name": "CSS",
-      "image": "/css.png"
-    },
-    {
-      "name": "Sass",
-      "image": "/sass.png"
-    },
-    {
-      "name": "Bootstrap",
-      "image": "/bootstrap.png"
-    },  
-    {
-      "name": "Javascript", 
-      "image": "/js.png"
-    },
-    {
-      "name": "react.Js",
-      "image": "/reactjs.png"
-    },
-    {
-      "name": "Redux",
-      "image": "/redux.png"
-    },
-    {
-      "name": "Next.js",
-      "image": "/nextjs.svg"
-    },
-    {
-      "name": "Figma",
-      "image": "/figma.png"
-    },
-    {
-      "name": "PHP",
-      "image": "/php.png"
-    },
-    {
-      "name": "Python",
-      "image": "/python.png"
-    },
-    {
-      "name": "Git",
-      "image": "/git.png"
-    },
-    {
-      "name": "Github",
-      "image": "/github.png"
-    },
-    {
-      "name": "Django",
-      "image": "/django.png"
-    },
-    {
-      "name": "MySQL",
-      "image": "/mysql.png"
-    }
-    
-  ]
+  {
+    "name": "HTML",
+    "image": "/html.png",
+    "description": "Skilled in HTML for creating semantic, accessible, and well-structured web pages."
+  },
+  {
+    "name": "CSS",
+    "image": "/css.png",
+    "description": " Skilled in CSS for styling web pages, including responsive design, layout, and animations. "
+  },
+  {
+    "name": "Sass",
+    "image": "/sass.png",
+    "description": "Skilled in Sass for creating more efficient and maintainable CSS code by adding features like variables, nesting, and mixins."
+  },
+  {
+    "name": "Bootstrap",
+    "image": "/bootstrap.png",
+    "description": "Skilled in Bootstrap for creating responsive and mobile-first websites with pre-designed components and styles."
+  },  
+  {
+    "name": "Javascript", 
+    "image": "/js.png",
+    "description": "Proficient in JavaScript for dynamic websites/web apps, DOM manipulation, event handling, ES6+ features, and integration with HTML and CSS."
+  },
+  {
+    "name": "React Js",
+    "image": "/reactjs.png",
+    "description": "Proficient in React.js for building dynamic web apps, creating reusable components, managing state with hooks and context API, and optimizing performance."
+  },
+  {
+    "name": "Redux",
+    "image": "/redux.png",
+    "description": " Skilled in Redux for managing state in complex web applications, using reducers, actions, and middleware. "
+  },
+  {
+    "name": "Next.js",
+    "image": "/nextjs.svg",
+    "description": "  Knowledgeable in Next.js for server side rendering, static site generation, routing and data fetching."
+  },
+  {
+    "name": "Figma",
+    "image": "/figma.png",
+    "description": " Proficient in Figma for designing and prototyping user interfaces, creating animations, and collaborating with designers. "
+  },
+  {
+    "name": "Python",
+    "image": "/python.png",
+    "description": "Comfortable with Python for scripting, data manipulation, and problem-solving. Developed a simple role-playing game as a learning project, gaining experience in coding logic and working with data structures."
+  },
+  {
+    "name": "Django",
+    "image": "/django.png",
+    "description": "Proficient in Django for building scalable web applications. Proficient in using Django ORM for efficient database interactions, and experienced in developing RESTful APIs, handling authentication, and integrating Django with front-end frameworks like React.js.      "
+  },
+  {
+    "name": "Github",
+    "image": "/github.png",
+    "description": "Skilled in using GitHub for collaborative development, managing repositories, code reviews, and pull requests. Familiar with GitHub workflows, issue tracking, and leveraging GitHub Actions for automation and continuous integration."
+  },
+  {
+    "name": "Git",
+    "image": "/git.png",
+    "description": "Proficient in Git for version control, including managing repositories, branching, merging, and resolving conflicts. Experienced in maintaining an organized project history and collaborating efficiently with teams through best practices in version control."
+  },
+  {
+    "name": "MySQL",
+    "image": "/mysql.png",
+    "description": "Experienced in MySQL for efficient relational database management, SQL querying, schema design, indexing, and backend integration with technologies like Django."
+  }
   
+]

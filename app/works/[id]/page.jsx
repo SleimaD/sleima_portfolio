@@ -1,53 +1,79 @@
 "use client"
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import worksData from './../../json/works.json'
-import Image from 'next/image';
-import { bagelFatOne } from '@/app/font';
-import Link from 'next/link';
+import React from 'react'
+import { bagelFatOne } from '../font'
+import Image from 'next/image'
+import Link from 'next/link'
+import worksData from './../json/works.json'
+import { useRouter } from 'next/navigation'
 
+const Works = () => {
+    const router = useRouter()
 
-
-const WorkDetail = ({
-  params:{id}
-}) => {
-  const router = useRouter();
-  const [work, setWork] = useState(worksData); 
-  
-  
-    return (
-      <div className='relative mb-[6rem] '>
-  
-        <button className={` absolute top-[-2rem] max-[400px]:top-[-3rem] left-16 tracking-wider rounded-2xl shadow-inner text-white p-3 px-4 bg-[#671e67] hover:bg-[#411b41] ${bagelFatOne.className}`}> <Link href="/works">Go Back</Link> </button>
-
-        <div className=' w-full flex justify-center items-center  mt-[6rem] max-[400px]:p-5'>     
-        <h1 className={` text-white text-[3rem] max-[400px]:text-[2.5rem] max-[400px]:mt-5  tracking-wider ${bagelFatOne.className}`}>{worksData[id].name}</h1> 
-        </div>
-
-        <div className='flex max-[400px]:flex-col max-[400px]:p-5 max-[400px]:gap-10 justify-center items-center gap-16'>
-          <div className='shadow-white shadow-lg w-[25rem] h-[17rem] max-[400px]:w-[22rem] max-[400px]:h-[13rem] bg-transparent rounded-xl mt-[6rem]'>
-            <div className={`bg-[#3d1a4f] w-[25rem] h-[17rem] max-[400px]:w-[22rem] max-[400px]:h-[13rem] rounded-xl shadow-inner`}>
-              <Image src={worksData[id].image} width={1400} height={850} alt={work.alt} />
+  return (
+    <div className={` relative text-white mt-[6rem] mb-16 `}>
+        <div className='flex justify-center w-full'>   
+            <div className={`p-2 flex gap-9 w-[90%] mb-[10rem] flex-wrap justify-center`}>
+                {worksData.map((element) => (  
+                    
+                                        
+                    <div key={element.alt}
+                    class="relative flex h-[18rem] w-[28rem] items-center justify-center rounded-[1.5em] border-[1px] border-[#813d98dc] bg-[#813d982f] p-[0.5rem] text-lime-300 bg-opacity-75"
+                    >
+                    <div
+                        class="group absolute left-1/2 top-1/2 flex h-[3em] w-[3em] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-[1.5em] border-[1px] border-[#ffffffaa] bg-[#5453539a] backdrop-blur-[20px] duration-[500ms] hover:h-[17rem] hover:w-[27em] hover:rounded-[1.5em]  "
+                    >
+                        <svg
+                        className="h-[1.5em] w-[1.5em] duration-300 group-hover:opacity-0 cursor-pointer"
+                        viewBox="0 0 48 48"
+                        fill="none"
+                        height="48"
+                        width="48"
+                        xmlns="http://www.w3.org/2000/svg"
+                        >
+                        <g clip-path="url(#a)">
+                            <path
+                            clip-rule="evenodd"
+                            d="M21.6 36h4.8V21.6h-4.8V36ZM24 0C10.8 0 0 10.8 0 24s10.8 24 24 24 24-10.8 24-24S37.2 0 24 0Zm0 43.2C13.44 43.2 4.8 34.56 4.8 24 4.8 13.44 13.44 4.8 24 4.8c10.56 0 19.2 8.64 19.2 19.2 0 10.56-8.64 19.2-19.2 19.2Zm-2.4-26.4h4.8V12h-4.8v4.8Z"
+                            fill-rule="evenodd"
+                            fill="#fff"
+                            ></path>
+                        </g>
+                        <defs>
+                            <clipPath id="a">
+                            <path d="M0 0h48v48H0z" fill="#fff"></path>
+                            </clipPath>
+                        </defs>
+                        </svg>
+                        <div
+                        className="items-left duration-600 absolute left-0 top-0 flex h-[17em] w-[26em] overflow-y-auto translate-y-[100%] flex-col justify-between p-[1.5em] font-nunito text-[hsl(0,0%,85%)] group-hover:translate-y-0"
+                        >
+                        <div className="items-left flex flex-col justify-center w-full p-2">
+                            <h1 className="text-[1.5em] font-bold leading-[0.8em] mb-4">{element.name}</h1>
+                            <p className="text-[0.9em] font-light mb-5">
+                                {element.description}
+                            </p>
+                            <p class="text-[0.9em] font-light mb-3 ">
+                                 <span className='font-bold italic'> Challenges : </span> {element.challenges}
+                            </p>
+                            <p className="text-[0.9em] font-light mb-3">
+                               <span className='font-bold italic'> Tools : </span> {element.tools}
+                            </p>
+                        </div>
+                            <a href={element.websiteUrl} className="cursor-pointer text-[1rem] underline"> View </a>
+                        </div>
+                    </div>
+                    <img className=' w-full h-full  transition-all duration-300 rounded-xl ' src={element.image}  alt={element.alt} />   
+                    </div>
+                   
+                ))}
+                           
             </div>
-          </div>
-          
-          <div className='glass text-white flex flex-col gap-5 w-[35%] max-[400px]:w-[90%] justify-center mt-10'>
-            <p className={` tracking-wider text-2xl ${bagelFatOne.className}`}>description : <span className=' font-mono text-[0.9rem]'>{worksData[id].description}</span></p>
-            <p className={` tracking-wider text-2xl ${bagelFatOne.className}`}>challenges : <span className=' font-mono text-[0.9rem]'>{worksData[id].challenges}</span></p>
-            <p className={` tracking-wider text-2xl ${bagelFatOne.className}`}>Tools : <span className=' font-mono text-[0.9rem]'>{worksData[id].tools}</span></p>
-          </div>
-        </div>
-        
-        <div className=' w-full flex justify-center items-center mt-[6rem] max-[400px]:mt-[3rem]'>
-          <a className={` tracking-wider text-white bg-[#2d102f5d] hover:bg-[#2d102fb9] border-[#94399a] border-2 rounded-2xl p-3 ${bagelFatOne.className}`} href={worksData[id].websiteUrl} target="_blank" rel="noopener noreferrer">Visit </a>
-        </div>
-         
-      </div>
-    );
-};
-   
-
-export default WorkDetail;
+        </div>  
+    </div>
+  )     
+}      
+                                  
+export default Works;
 
 
 

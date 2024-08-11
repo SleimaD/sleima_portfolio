@@ -1,20 +1,15 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { bagelFatOne } from "@/app/font";
+import Contact from "./components/Contact";
+import Maincontent from "./components/Maincontent";
 
 export default function Home() {
   return (
-    <main className=" w-full flex min-h-screen  flex-col overflow-x-hidden ">
-      <div className=" mt-[10rem] max-[400px]:mt-[9rem] ms-[10rem] flex justify-start">
-        <p className={`text-white max-[400px]:text-[2rem] text-[3rem] ${bagelFatOne.className}`}>Hello 👋,</p> 
-      </div>      
-      <div className=" w-full flex justify-center items-center  ">
-        <p className={`text-white text-center text-[4rem] max-[400px]:text-[2rem] font-bold uppercase ${bagelFatOne.className}`}>Welcome to <br /> my <br /> 
-        <span className=" text-[7.5rem] max-[400px]:text-[2.5rem] text-[#dfa1fd] ">PORTFOLIO</span> </p>
-      </div>
-      <div className="mb-5 max-[400px]:mb-[-5rem] relative">
-        <p className={`text-[2.5rem] absolute right-[25rem] top-[-2rem] text-[#dfa1fd] ${bagelFatOne.className}`}> &#10094; / &#10095; </p>
-      </div> 
+    <main className=" w-full  h-screen  flex overflow-hidden gap-2 bg-[#111111]  ">
+      <Contact />
+      <Maincontent />
     </main>
   );
 }

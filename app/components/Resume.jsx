@@ -141,7 +141,7 @@ function Resume() {
                     &#8203;
                   </span>
                   <div
-                    className="inline-block align-bottom bg-[#ffffff85] rounded-lg text-left overflow-hidden shadow-md shadow-white transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+                    className="inline-block align-bottom bg-[#ffffff85] z-[999] rounded-lg text-left overflow-hidden shadow-md shadow-white transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
                     role="dialog"
                     aria-modal="true"
                     aria-labelledby="modal-headline"

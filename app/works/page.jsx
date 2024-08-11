@@ -26,10 +26,10 @@ const Works = () => {
                     
                                         
                     <div key={element.alt}
-                    class="relative flex h-[18rem] w-[28rem] items-center justify-center rounded-[1.5em] border-[1px] border-[#813d98dc] bg-[#813d982f] p-[0.5rem] text-lime-300 bg-opacity-75"
+                    class="relative blockmauve flex h-[18rem] w-[28rem] items-center justify-center rounded-[1.5em] border-[1px] border-[#813d98dc] bg-[#813d982f] p-[0.5rem] text-lime-300 bg-opacity-75"
                     >
                     <div
-                        class="group absolute left-1/2 top-1/2 flex h-[3em] w-[3em] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-[1.5em] border-[1px] border-[#ffffffaa] bg-[#5453539a] backdrop-blur-[20px] duration-[500ms] hover:h-[17rem] hover:w-[27em] hover:rounded-[1.5em]  "
+                        class="group absolute left-1/2 top-1/2 flex h-[3em] w-[3em] -translate-x-1/2 -translate-y-1/2 items-center justify-center overflow-hidden rounded-[1.5em] border-[1px] border-[#ffffffaa] bg-[#5453539a] backdrop-blur-[20px] duration-[500ms]  hover:h-[17rem] hover:w-[27em] max-[426px]:hover:w-[24.5em] max-[426px]:hover:h-[16rem]  blockhover hover:rounded-[1.5em]  "
                     >
                         <svg
                         className="h-[1.5em] w-[1.5em] duration-300 group-hover:opacity-0 cursor-pointer"
@@ -54,15 +54,15 @@ const Works = () => {
                         </defs>
                         </svg>
                         <div
-                        className="items-left duration-600 absolute left-0 top-0 flex h-[17em] w-[26em] overflow-y-auto translate-y-[100%] flex-col justify-between p-[1.5em] font-nunito text-[hsl(0,0%,85%)] group-hover:translate-y-0"
+                        className="items-left  duration-600 absolute left-0 top-0 flex h-[17em] w-[26em] overflow-y-auto translate-y-[100%] flex-col justify-between p-[1.5em] font-nunito text-[hsl(0,0%,85%)] group-hover:translate-y-0"
                         >
-                        <div className="items-left flex flex-col justify-center w-full p-2">
+                        <div className="items-left flex flex-col justify-center w-full p-3  ">
                             <h1 className="text-[1.5em] font-bold leading-[0.8em] mb-4">{element.name}</h1>
                             <p className="text-[0.9em] font-light mb-5">
                                 {element.description}
                             </p>
                             <p class="text-[0.9em] font-light mb-3 ">
-                                 <span className='font-bold italic'> Challenges : </span> {element.challenges}
+                                <span className='font-bold italic '>Challenges : </span> {element.challenges}
                             </p>
                             <p className="text-[0.9em] font-light mb-3">
                                <span className='font-bold italic'> Tools : </span> {element.tools}

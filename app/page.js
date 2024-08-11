@@ -7,7 +7,7 @@ import Maincontent from "./components/Maincontent";
 
 export default function Home() {
   return (
-    <main className=" w-full  h-screen  flex overflow-hidden gap-2 bg-[#111111]  ">
+    <main className=" w-[100vw]  h-screen  flex overflow-hidden gap-2 bg-[#111111]  ">
       <Contact />
       <Maincontent />
     </main>

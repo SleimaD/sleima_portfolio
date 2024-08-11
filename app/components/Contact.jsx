@@ -18,7 +18,7 @@ export const bagelFatOne  = Bagel_Fat_One ({
 
 function Contact() {
   return (
-    <div className="bg-[#000000cb] w-[25%] h-full mt-10 rounded-tr-xl backdrop-blur-sm flex flex-col items-center p-4">
+    <div className="boiteContact bg-[#000000cb] w-[25%] h-full mt-10 rounded-tr-xl backdrop-blur-sm flex flex-col items-center p-4">
         <div className="flex justify-center items-center bg-[#5a575798] w-[11rem] h-[11rem] rounded-xl backdrop-blur-sm  mt-6 ">
             <img src="/bitmoji.png" alt="contact" className="w-[9rem] h-[9rem] " />
         </div>

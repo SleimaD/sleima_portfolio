@@ -31,7 +31,7 @@ function Resume() {
   return (
     <div className='w-full  mb-[6rem]   p-4 overflow-y-auto '>
         <div className='w-full h-full flex flex-col justify-center items-center  mt-10 overflow-y-auto '>
-          <h2 className={`text-white text-5xl tracking-wide ${bagelFatOne.className} mt-16 underline `}>Education</h2>
+          <h2 className={`text-white text-5xl tracking-wide ${bagelFatOne.className} mt-16 underline max-[1023px]:mb-[-3.5rem] max-[426px]:text-3xl `}>Education</h2>
 
 
           <section className="design-section h-[180rem] mt-5   w-full">
@@ -69,7 +69,7 @@ function Resume() {
               </div>
           </section>
 
-          <h2 className={`text-white text-5xl tracking-wide ${bagelFatOne.className} mt-10 underline  `}>Experience</h2>
+          <h2 className={`text-white text-5xl tracking-wide ${bagelFatOne.className} mt-10 underline max-[1023px]:mb-[-3.5rem] max-[426px]:text-3xl  `}>Experience</h2>
 
           <section className="design-section  h-[40rem] mb-10 w-full">
             <div className="timeline">
@@ -113,7 +113,7 @@ function Resume() {
               </div>
           </section>
 
-          <h2 className={`text-white text-5xl tracking-wide ${bagelFatOne.className} mt-5 mb-5 underline  `}>Skills</h2>
+          <h2 className={`text-white text-5xl tracking-wide ${bagelFatOne.className} mt-5 mb-5 underline max-[426px]:text-3xl  `}>Skills</h2>
 
           <div className={`mt-16 mb-[10rem] flex justify-center text-center`}> 
 

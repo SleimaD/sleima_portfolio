@@ -1,8 +1,17 @@
 "use client"
-import { bagelFatOne } from "../font"
+// import { bagelFatOne } from "../font"
 import Image from "next/image"
 import Link from "next/link"
 import SkillsData from "./../json/skills.json"
+import {Bagel_Fat_One} from 'next/font/google'
+
+
+export const bagelFatOne  = Bagel_Fat_One ({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+
 
 const Skills = () => {
   return (

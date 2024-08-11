@@ -1,9 +1,18 @@
 "use client"
 import { useState } from "react"
-import { bagelFatOne } from "../font"
+// import { bagelFatOne } from "../font"
 import Link from "next/link"
 import Resume from "./Resume"
 import Works from "../works/page"
+import {Bagel_Fat_One} from 'next/font/google'
+
+
+export const bagelFatOne  = Bagel_Fat_One ({
+  subsets: ['latin'],
+  weight: ['400'],
+});
+
+
 
 
 const Navbar = ({ setActiveComponent, activeComponent }) => {

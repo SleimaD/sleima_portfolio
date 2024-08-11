@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import { bagelFatOne } from "@/app/font";
+// import { bagelFatOne } from "@/app/font";
 import Contact from "./components/Contact";
 import Maincontent from "./components/Maincontent";
 

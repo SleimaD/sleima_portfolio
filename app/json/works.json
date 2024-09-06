@@ -84,27 +84,6 @@
     "description": "shi fu mi game.",
     "challenges":"play against the computer. You chose a between 3 options and the computer choses a random option, ",
     "tools":"React.js"
-  },
-  {
-    "id": "8",
-    "name":"To-Do List",
-    "image": "/todolist.png",
-    "alt": "todolist",
-    "websiteUrl": "https://sleimad.github.io/SLEIMA_TO-DO-LIST/",
-    "description": "to-do list",
-    "challenges": "display each entered task and have an option to delet edit or validate a task.",
-    "tools": "HTML,CSS,Javascript"
-  },
-  {
-    "id": "9",
-    "name":"Royella",    
-    "image": "/royella.png",
-    "alt": "Royella",
-    "websiteUrl": "https://github.com/SleimaD/Royella_SleimaDucros.git",
-    "description": "Hotel Reservation System",
-    "challenges": "This Full Stack project is a hotel reservation system. It allows users to book a room and view their reservations. The project was a culmination of my back-end learning journey and involved assembling everything I learned from coding, including Python, Django, React and MySQL.",
-    "tools": "Django, React, Mysql, Bootstrap, Tailwind"
   }
-  
 ]
 

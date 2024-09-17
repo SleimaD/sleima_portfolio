@@ -20,9 +20,9 @@ function Maincontent() {
 
 
   return (
-    <div className="bg-[#000000cb] maincontent w-[75%] h-full mt-10 rounded-t-xl mx-4 backdrop-blur-sm ">
+    <div className="bg-[#000000cb] maincontent w-[75%]  mt-10 rounded-t-xl mx-4 backdrop-blur-sm ">
         <Navbar setActiveComponent={setActiveComponent} activeComponent={activeComponent} />
-        <div className='main  h-full mt-10 mb-16 overflow-y-auto '>
+        <div className='main  h-screen mt-10 mb-16 overflow-y-auto '>
             {renderComponent()}
         </div>
     </div>

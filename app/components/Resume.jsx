@@ -29,38 +29,60 @@ function Resume() {
           Education
         </h2>
 
-        <section className="design-section mt-5 w-full max-[429px]:w-[90%] ">
-          <div className="timeline max-[430px]:m-0 max-[378px]:m-2 ">
 
-            <div className="timeline-empty"></div>
-
+        <section className="design-section mt-5 w-full max-[429px]:w-[90%]">
+          <div className="timeline max-[430px]:m-0 max-[378px]:m-2">
+            
+            <div className="timeline-component shadow-inner timeline-content max-[429px]:w-[22rem] max-[429px]:m-0 max-[429px]:mt-[-3rem] max-[376px]:mt-[-4rem]">
+              <h3 className="font-bold font-serif mb-2">
+                IBM AI Developer (Specialization)
+              </h3>
+              <p className="text-[0.9rem] mb-4">Coursera (2024-2025)</p>
+              <p className="text-[0.9rem] max-[429px]:text-[0.5rem] font-mono">
+                Specialized in developing and deploying AI-driven applications using Python, Flask, and a variety of machine learning and natural language processing techniques. Focused on generative AI, end-to-end model implementation, and best practices for ethical and responsible AI. Gained hands-on experience integrating AI services into real-world projects and working with cloud deployment environments.
+              </p>
+            </div>
             <div className="timeline-middle">
               <div className="timeline-circle"></div>
             </div>
+            <div className="timeline-empty"></div>
 
-            <div className="timeline-component shadow-inner timeline-content max-[429px]:w-[22rem] max-[429px]:m-0 max-[429px]:mt-[-3rem] max-[376px]:mt-[-4rem] ">
-              <h3 className='font-bold font-serif mb-2'>Full Stack Developer (Training)</h3>
-              <p className='text-[0.9rem]  mb-4'>Molengeek (2023 - 2024)</p>
-              <p className='text-[0.9rem] max-[429px]:text-[0.5rem] font-mono'>
-                Completed intensive Full Stack Developer training at MolenGeek, gaining front-end and back-end skills through hands-on projects. Developed technical expertise and a collaborative work ethic, preparing for real-world web development challenges.
+            <div className="timeline-empty"></div>
+            <div className="timeline-middle">
+              <div className="timeline-circle"></div>
+            </div>
+            <div className="timeline-component shadow-inner timeline-content max-[429px]:w-[22rem] max-[429px]:m-0 max-[429px]:mt-2 max-[376px]:mt-8">
+              <h3 className="font-bold font-serif mb-2">
+                Full Stack Developer (Training)
+              </h3>
+              <p className="text-[0.9rem] mb-4">Molengeek (2023 - 2024)</p>
+              <p className="text-[0.9rem] max-[429px]:text-[0.5rem] font-mono">
+                Completed intensive Full Stack Developer training at MolenGeek, 
+                gaining front‑end and back‑end skills through hands‑on projects…
               </p>
             </div>
 
             <div className="timeline-component shadow-inner timeline-content max-[429px]:w-[22rem] max-[429px]:m-0 max-[429px]:mt-2 max-[376px]:mt-8">
-              <h3 className='font-bold font-serif mb-2'>Bachelor Degree in Business Informatics</h3>
-              <p className='text-[0.9rem]  mb-4'>Isfce, Brussels (Jan 2021 - Jun 2023)</p>
-              <p className='text-[0.9rem] max-[429px]:text-[0.5rem] font-mono'>
-                Bachelor degree in Business Informatics, focusing on IT and business process integration, covering database management, systems analysis, software development, and strategic IT management.
+              <h3 className="font-bold font-serif mb-2">
+                Bachelor Degree in Business Informatics
+              </h3>
+              <p className="text-[0.9rem] mb-4">
+                Isfce, Brussels (Jan 2021 - Jun 2023)
+              </p>
+              <p className="text-[0.9rem] max-[429px]:text-[0.5rem] font-mono">
+                Bachelor degree in Business Informatics, focusing on IT and 
+                business process integration, covering database management, 
+                systems analysis, software development, and strategic IT management.
               </p>
             </div>
-
             <div className="timeline-middle">
               <div className="timeline-circle"></div>
             </div>
-
             <div className="timeline-empty"></div>
+
           </div>
         </section>
+
 
         <h2 className={`text-white text-5xl tracking-wide ${bagelFatOne.className} mt-10 max-[429px]:mt-[-3rem] underline md:mb-[-3.5rem] md:text-4xl sm:text-3xl`}>
           Experience
@@ -75,21 +97,6 @@ function Resume() {
               <div className="timeline-circle"></div>
             </div>
 
-            <div className="timeline-component shadow-inner timeline-content max-[429px]:w-[22rem] max-[429px]:m-0   max-[429px]:mt-[-3rem]">
-              <h3 className='font-bold font-serif mb-2'>Consultant <small> (Web Development & UX/UI Design) </small></h3>
-              <p className='text-[0.9rem] mb-4'>2024 - Present </p>
-              <ul className='text-[0.7rem] max-[429px]:text-[0.6rem] font-mono flex flex-col justify-center gap-2 list-disc p-2 '>
-                <li>
-                  Provided web development and UX/UI design services for clients.
-                </li>
-                <li>
-                  Designed intuitive user interfaces and optimized databases, improving both functionality and user engagement.
-                </li>
-                <li>
-                  Collaborated with teams to deliver customized solutions, enhancing the overall user experience and operational efficiency.
-                </li>
-              </ul>
-            </div>
 
             <div className="timeline-component shadow-inner timeline-content max-[429px]:w-[22rem] max-[429px]:m-0 max-[429px]:mt-2   max-[376px]:mt-8">
               <h3 className='font-bold font-serif mb-2'>Full Stack Web Development <small className='text-sm'>(Professional training)</small></h3>
@@ -99,9 +106,6 @@ function Resume() {
               </p>
             </div>
 
-            <div className="timeline-middle">
-              <div className="timeline-circle"></div>
-            </div>
 
             <div className="timeline-empty"></div>
           </div>

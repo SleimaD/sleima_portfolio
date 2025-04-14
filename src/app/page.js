@@ -92,7 +92,7 @@ export default function Home() {
           {/* Right side - Description */}
           <div className="hero-right max-w-md text-base mt-5  leading-relaxed">
             <p>
-              Hello, I'm a Full Stack developer — passionate about building smart, human-focused web tools.
+              Hello, I am a Full Stack developer — passionate about building smart, human-focused web tools.
             </p>
           </div>
         </div>

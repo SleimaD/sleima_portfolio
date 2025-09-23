@@ -7,7 +7,7 @@ export default function Navbar() {
         <a href="#projects" className="hover:text-gray-500 transition">Work</a>
         <a href="#contact" className="hover:text-gray-500 transition">Contact</a>
         <a
-          href="/CV-SleimaDucros.pdf"
+          href="/SleimaDucros.CV.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="  hover:text-gray-500 transition"

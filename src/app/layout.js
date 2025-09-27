@@ -2,6 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import Cursor from "@/components/Cursor";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,9 +34,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark">
       <body className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${spaceGrotesk.variable} antialiased`}>
-        {children}
+        <ThemeProvider>
+          <div className="bg-grid" />
+          <div className="bg-noise" />
+          <Cursor />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

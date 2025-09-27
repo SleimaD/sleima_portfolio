@@ -1,198 +1,289 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { FaRegCopy } from "react-icons/fa";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function Home() {
-  const [showTopButton, setShowTopButton] = useState(false);
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText("sleima@icloud.com");
-    toast.success("Email copied to clipboard!");
-  };
+import Navbar from "@/components/Navbar";
+import SmoothScroll from "@/components/SmoothScroll";
+import Loader from "@/components/Loader";
+import GlitchHeading from "@/components/GlitchHeading";
+import Marquee from "@/components/Marquee";
+import SectionReveal from "@/components/SectionReveal";
+import AboutShowcase from "@/components/AboutShowcase";
+import SkillsMatrix from "@/components/SkillsMatrix";
+import TerminalCard from "@/components/TerminalCard";
+import ProjectsRail from "@/components/ProjectsRail";
 
+const HERO_SUBTITLE = "Full-stack developer engineering scalable applications across web, Python, and AI.";
+
+const HERO_MARQUEE = [
+  "Portfolio 2025",
+  "Open to collaboration",
+  "Based in Belgium",
+  "Multilingual (FR/EN/NL) ",
+  "Agile/Scrum Experience",
+];
+
+const PROJECTS = [
+  {
+    title: "AI Image Generator",
+    summary:
+      "Prompt-to-image generator featuring auth, data persistence, and smooth UI flows.",
+    github: "https://github.com/SleimaD/ai-image-gen.git",
+    tags: ["Next.js", "PostgreSQL", "Supabase", "TypeScript", "AI"],
+    highlights: [
+      "Auth & database setup with Supabase for user storage",
+      "Prompt-to-image generation pipeline with TypeScript/Next.js",
+    ],
+  },
+  {
+    title: "Hotel Royella",
+    summary:
+      "Booking platform with admin dashboard, staff roles, and accessibility-first flows.",
+    github: "https://github.com/SleimaD/Royella_SleimaDucros.git",
+    tags: ["React", "Python ( Django )", "MySQL", "REST API ", "Authentication"],
+    highlights: [
+      "Room booking flows with CRUD and role-based permissions",
+      "Admin dashboard for analytics and staff management",
+    ],
+  },
+  {
+    title: "Wandel Game",
+    summary: "Narrative-driven text RPG with modular combat and inventory mechanics.",
+    github: "https://github.com/SleimaD/WandelGame.git",
+    tags: ["Python", "OOP", "CLI", "Game Logic"],
+    highlights: [
+      "Python OOP architecture with extendable state machine system",
+      "Turn-based combat and quest branching logic",
+    ],
+  },
+  {
+    title: "SimpleChat AI ",
+    summary: "AI-powered chatbot built for devchallenge.io using JavaScript and APIs.",
+    github: "https://github.com/SleimaD/simplechat.ai.git",
+    // demo: "",
+    tags: ["JavaScript", "APIs", "AI"],
+    highlights: [
+      "Core chatbot logic for handling user prompts and responses",
+      "Lightweight UI for real-time interactions",
+    ],
+  },
+];
+
+const ABOUT_CONTENT = {
+  headline:
+    "Full-stack developer with expertise spanning web, Python, and applied AI.",
+  paragraphs: [
+
+    "After completing an intensive full-stack program and an IBM AI Developer certification, I am building my career at the intersection of frontend, backend, and intelligent systems. I focus on delivering scalable, reliable, and well-structured applications that combine technical rigor with user-centered design.",
+
+    "With a background that bridges business informatics and hands-on projects, I aim to create solutions that are accessible, maintainable, and adaptable across domains, from modern web platforms to AI-enhanced tools. Service quality remains central to my mindset: every feature should be purposeful, efficient, and future-proof.",
+
+  ],
+  callouts: [
+    {
+      label: "Strong suits",
+      items: ["Analytical problem-solving", "Product-focused mindset ", "Rapid learning & adaptability", "Full-stack delivery with reliability"],
+    },
+    {
+      label: "Toolbox",
+      items: ["Github/Git", "React, Next.js", "Python/Django", "MySQL", "AI & NLP (Hugging Face, Pandas) "],
+    },
+    {
+      label: "Mindset",
+      items: ["Solution-oriented mindset", "Growth & Adaptability ", "Collaboration & initiative", "Resilience & ownership"],
+    },
+  ],
+};
+
+const SKILL_GROUPS = [
+  {
+    title: "Frontend",
+    skills: ["React", "Next.js", "Tailwind", "TypeScript", "React Native"],
+  },
+  {
+    title: "Backend",
+    skills: ["Django", "Flask", "FastAPI", "Supabase (BaaS)"],
+  },
+  {
+    title: "Database",
+    skills: ["SQL", "MySQL", "PostgreSQL", "DBeaver"],
+  },
+  {
+    title: "AI / Data",
+    skills: ["Hugging Face", "Generative AI", "NLP", "Prompt Engineering", "Pandas", "NumPy"],
+  },
+  {
+    title: "Ops & Collaboration",
+    skills: ["Git/GitHub", "REST APIs", "Agile / Scrum", "Vercel", "Figma"],
+  },
+];
+
+const CONTACT_LINKS = {
+  email: "sleima@icloud.com",
+  github: "https://github.com/SleimaD",
+  linkedin: "https://www.linkedin.com/in/sleima-ducros/",
+};
+
+export default function Home() {
+  const prefersReducedMotion = useReducedMotion();
+  const [showTopButton, setShowTopButton] = useState(false);
+  const [, setLoaderDone] = useState(false);
+  const [spotlight, setSpotlight] = useState({ active: false, x: "50%", y: "50%" });
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShowTopButton(window.scrollY > 400);
-    };
-    window.addEventListener("scroll", handleScroll);
+    if (typeof window === "undefined") return;
+    const handleScroll = () => setShowTopButton(window.scrollY > 480);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(CONTACT_LINKS.email);
+    toast.success("Email copied 👍", { autoClose: 1600 });
+  };
 
-  const projects = [
-    {
-      title: "Hotel Royella",
-      description: "Booking platform with admin dashboard. React, Django, MySQL.",
-      github: "https://github.com/SleimaD/Hotel-Royella",
-    },
-    {
-      title: "EMONAI",
-      description: "AI-powered app that analyzes emotional tone in text using HuggingFace Transformers and Flask.",
-      github: "https://github.com/SleimaD/emotion-analyzer",
-    },
-    {
-      title: "Wandel",
-      description: "Text-based role-playing game featuring exploration, inventory, battles and a final boss. Python OOP structure.",
-      github: "https://github.com/SleimaD/ProjetPython-Sleima-CSB4",
-    },
-    {
-      title: "Memory Game",
-      description: "Simple memory card game built with JavaScript and DOM manipulation. Flip cards, match pairs, and track score.",
-      github: "https://github.com/SleimaD/SLEIMA_MEMORY-GAME.git",
-      demo: "https://sleimad.github.io/SLEIMA_MEMORY-GAME/",
-    },
-  ];
+  const handleSubtitleMove = (event) => {
+    if (prefersReducedMotion) return;
+    const rect = event.currentTarget.getBoundingClientRect();
+    const x = `${((event.clientX - rect.left) / rect.width) * 100}%`;
+    const y = `${((event.clientY - rect.top) / rect.height) * 100}%`;
+    setSpotlight({ active: true, x, y });
+  };
+
+  const disableSpotlight = () => {
+    if (prefersReducedMotion) return;
+    setSpotlight((prev) => ({ ...prev, active: false }));
+  };
 
   return (
     <>
+      <Loader onComplete={() => setLoaderDone(true)} />
+      <SmoothScroll />
       <Navbar />
       <ToastContainer
         position="bottom-left"
-        autoClose={2500}
+        autoClose={2000}
         hideProgressBar
         closeOnClick
         pauseOnHover
         draggable
         toastStyle={{
-          background: "#1c1c1c",
-          color: "#ccc",
+          background: "var(--color-surface-solid)",
+          color: "var(--color-text-primary)",
+          borderRadius: "10px",
+          border: "1px solid var(--color-border)",
           fontSize: "0.85rem",
-          boxShadow: "none",
-          border: "1px solid #333",
-          borderRadius: "6px",
+          boxShadow: "var(--shadow-soft)",
         }}
       />
 
-      {/* HERO SECTION */}
-      <section className="hero-layout relative w-full min-h-screen flex items-center justify-center text-white px-6 ">
-        <div className="max-w-7xl w-full flex flex-nowrap justify-between items-start gap-10">
-          {/* Left side - Name and Email */}
-          <div className="hero-left flex flex-col gap-2">
-            <h1 className="text-[clamp(15.5rem,8vw,6rem)] font-extrabold leading-[1] text-[#bafccd] tracking-tight uppercase">
-              SLEIMA<br />DUCROS
-            </h1>
-            <p className="text-base font-medium flex items-center gap-2 myemail">
-              sleima@icloud.com
-              <button
-                onClick={copyToClipboard}
-                className="text-gray-500 hover:text-black transition"
-                aria-label="Copy email"
-              >
-                <FaRegCopy />
-              </button>
-            </p>
-          </div>
+      <main className="relative mx-auto max-w-[1200px] px-4 pb-24 pt-24 text-primary mt-[-1.5rem] sm:px-6 sm:pb-28 sm:pt-28 sm:mt-[-2.5rem] md:px-10 md:pb-32 md:pt-32 md:mt-[-3.5rem] lg:mt-[-4rem]">
+        <section className="hero-section flex min-h-[70vh] flex-col justify-center gap-8 sm:min-h-[75vh] sm:gap-10 md:min-h-[80vh] md:gap-12">
+          <div className="space-y-6">
+            <GlitchHeading className="text-title text-[clamp(3.8rem,12vw,8.5rem)] leading-[0.80] uppercase">
+              Sleima Ducros
+            </GlitchHeading>
 
-          {/* Right side - Description */}
-          <div className="hero-right max-w-md text-base mt-5  leading-relaxed">
-            <p>
-              Hello, I am a Full Stack developer — passionate about building smart, human-focused web tools.
-            </p>
-          </div>
-        </div>
-      </section>
-      {/* END HERO SECTION */}
-
-      {/* WORK SECTION */}
-      <div className="min-h-screen  text-white overflow-hidden">
-        <section
-          id="projects"
-          className="min-h-screen px-40 py-32 text-white bg-[#0f0f0f] border-t-[5px] border-b-[5px] border-[#131313] font-mono tracking-tight"
-        >
-          <h2 className="text-[clamp(4rem,10vw,10rem)] font-black uppercase text-center leading-[0.85] mb-24  border-[#2a2a2a] pb-4">
-            Work
-          </h2>
-          <div className="grid grid-cols-2 gap-px bg-[#1c1c1c] border border-[#333]">
-            {projects.map((project, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 60, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.2, delay: idx * 0.10, ease: "easeOut" }}
-                className="flex flex-col justify-between border border-[#333] bg-[#0f0f0f] p-5 gap-4 hover:bg-[#161616] transition"
-              >
-                <div>
-                  <h3 className="text-2xl font-bold uppercase tracking-widest mb-2 text-white">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-gray-400">{project.description}</p>
-                </div>
-                <div className="mt-6 flex flex-wrap gap-4 text-xs uppercase font-semibold tracking-wider">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="underline hover:opacity-70"
-                  >
-                    GitHub
-                  </a>
-                  {project.demo && (
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline hover:opacity-70"
-                    >
-                      Live Demo
-                    </a>
-                  )}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          <div className="text-center mt-24">
-            <a
-              href="https://github.com/SleimaD?tab=repositories"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-3 border border-[#444] hover:border-white hover:text-white uppercase font-semibold tracking-widest transition"
+            <motion.p
+              className="hero-subtitle max-w-none text-base text-muted sm:max-w-xl sm:text-lg"
+              data-spotlight={spotlight.active ? "true" : "false"}
+              style={{ "--spotlight-x": spotlight.x, "--spotlight-y": spotlight.y }}
+              onMouseMove={handleSubtitleMove}
+              onMouseLeave={disableSpotlight}
+              initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             >
-              View All on GitHub
-            </a>
+              {HERO_SUBTITLE}
+              <span className="mt-3 block text-sm uppercase tracking-[0.45em] text-muted">
+                 Python | React, Next.js | AI Integration
+              </span>
+            </motion.p>
           </div>
-        </section>
-        {/* END WORK SECTION */}
 
-        {/* CONTACT SECTION */}
-        <section id="contact" className="text-center space-y-4 mb-10 flex flex-col justify-center items-center gap-4 relative z-0 mt-16 ">
-          <motion.h2
-            className="text-5xl font-black uppercase "
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            Contact
-          </motion.h2>
-          <motion.p
-            className="text-gray-600"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            Interested in collaborating or have any questions?
-          </motion.p>
-          <a
-            href="mailto:sleima@icloud.com"
-            className="inline-block border border-white px-6 py-3 rounded-full hover:bg-black hover:text-white transition"
-          >
-            Send Email
-          </a>
-        </section>
-      </div>
+          <div className="flex flex-wrap items-center gap-4 text-[0.68rem] uppercase tracking-[0.28em] text-muted sm:gap-6 sm:text-sm sm:tracking-[0.35em]">
+            <button
+              type="button"
+              onClick={copyToClipboard}
+              className="rounded-full border border-base bg-transparent px-5 py-3 font-mono tracking-[0.25em] text-title transition hover:border-strong hover:text-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent)] cta-button"
+              data-magnetic
+            >
+              <span className="inline-flex items-center gap-2 cursor-pointer">
+                {CONTACT_LINKS.email}
+                <FaRegCopy />
+              </span>
+            </button>
 
-      {/* Scroll-to-top Button */}
+            <div className="flex flex-wrap items-center gap-4">
+              {/* <a href="#projects" className="cta-button" data-magnetic>
+                View projects
+              </a> */}
+              <a href="#contact" className="cta-button" data-magnetic>
+                Let’s collaborate
+              </a>
+            </div>
+          </div>
+
+          <Marquee items={HERO_MARQUEE} duration={24} />
+        </section>
+
+        <SectionReveal as="section" id="projects" className="mt-24 space-y-6 md:mt-32">
+          <header className="space-y-4">
+            <p className="text-xs font-mono uppercase tracking-[0.5em] text-muted">
+              Featured work
+            </p>
+            <h2 className="text-title text-[clamp(2.6rem,8vw,5rem)] uppercase tracking-[0.28em]">
+              Selected projects & repos
+            </h2>
+          </header>
+          <ProjectsRail projects={PROJECTS} />
+        </SectionReveal>
+
+        <SectionReveal as="section" id="about" className="mt-24 space-y-10 md:mt-32">
+          <header className="space-y-3">
+            <p className="text-xs font-mono uppercase tracking-[0.5em] text-muted">
+              About
+            </p>
+            <h2 className="text-title text-[clamp(2.2rem,7vw,4rem)] uppercase tracking-[0.3em]">
+              Behind the Code 
+            </h2>
+          </header>
+          <AboutShowcase content={ABOUT_CONTENT} />
+        </SectionReveal>
+
+        <SectionReveal as="section" id="skills" className="mt-24 space-y-10 md:mt-32">
+          <header className="space-y-3 text-center">
+            <p className="text-xs font-mono uppercase tracking-[0.5em] text-muted">
+              Skills
+            </p>
+            <h2 className="text-title text-[clamp(2rem,6vw,3.5rem)] uppercase tracking-[0.3em]">
+              Tech Stack
+            </h2>
+          </header>
+          <SkillsMatrix groups={SKILL_GROUPS} />
+        </SectionReveal>
+
+        <SectionReveal as="section" id="contact" className="mt-24 space-y-8 md:mt-32">
+          <header className="space-y-3 text-center">
+            <p className="text-xs font-mono uppercase tracking-[0.5em] text-muted">
+              Contact
+            </p>
+            <h2 className="text-title text-[clamp(2.2rem,6.5vw,3.5rem)] uppercase tracking-[0.3em]">
+              Let’s build together
+            </h2>
+          </header>
+          <TerminalCard links={CONTACT_LINKS} />
+        </SectionReveal>
+      </main>
+
       {showTopButton && (
         <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 text-[5rem] p-3 text-[#d2f4de] hover:text-gray-400 transition"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-5 right-4 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-base bg-surface text-xl text-accent shadow-soft transition hover:border-strong focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)] sm:bottom-6 sm:right-6"
           aria-label="Back to top"
         >
           ↑

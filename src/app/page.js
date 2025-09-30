@@ -219,7 +219,7 @@ export default function Home() {
             </button>
 
             <div className="flex flex-wrap items-center gap-4">
-              {/* <a href="#projects" className="cta-button" data-magnetic>
+              {/* <a href="  projects" className="cta-button" data-magnetic>
                 View projects
               </a> */}
               <a href="#contact" className="cta-button" data-magnetic>

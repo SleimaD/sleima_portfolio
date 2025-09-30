@@ -8,10 +8,10 @@
 html[data-theme="light"] {
   --background: #F8F6F2;
   --foreground: #0D0D0D;
-  --title: #432618;
+  --title: #0b0604;
   --muted: #6E6259;
   --border: #b8b6b2;
-  --accent: #C47335;
+  --accent: #351e0d;
   --accent-aux: #3DA9A9;
 
   --color-background: var(--background);
@@ -49,8 +49,8 @@ html[data-theme="light"] {
   --project-dot-1: #3C2F2F;
   --project-dot-2: rgba(60, 47, 47, 0.65);
   --project-dot-3: rgba(61, 169, 169, 0.7);
-  --loader-bg: radial-gradient(circle at 25% 20%, rgba(196, 115, 53, 0.18), transparent 65%), radial-gradient(circle at 75% 15%, rgba(61, 169, 169, 0.18), transparent 70%), linear-gradient(135deg, #F8F6F2 0%, #EDE8E1 100%);
-  --loader-glow: rgba(110, 58, 18, 0.618);
+  --loader-bg: radial-gradient(circle at 25% 20%, rgba(196, 115, 53, 0.071), transparent 65%), radial-gradient(circle at 75% 15%, rgba(61, 169, 169, 0.18), transparent 70%), linear-gradient(135deg, #F8F6F2 0%, #EDE8E1 100%);
+  --loader-glow: rgba(110, 58, 18, 0.268);
   --loader-text-subtle: #3c2f2f99;
   --color-emphasis: rgba(60, 47, 47, 0.85);
 }
@@ -483,7 +483,7 @@ html[data-theme="light"] .hero-section {
 
 html[data-theme="light"] .marquee {
   border-color: #434242;
-  background: #c473351d;
+  background: #c4733504;
 }
 
 html[data-theme="dark"] .marquee {

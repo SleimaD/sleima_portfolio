@@ -84,7 +84,7 @@ export default function Loader({ onComplete, duration = 1800 }) {
           animate={{ opacity: isClosing ? 0 : 1, y: isClosing ? -4 : 0 }}
           transition={{ duration: 0.5, ease: EASE, delay: prefersReducedMotion ? 0 : 0.45 }}
         >
-          crafting experience
+          Code. Data. Solutions.
         </motion.span>
       </div>
     </motion.div>

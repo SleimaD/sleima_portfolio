@@ -8,9 +8,9 @@ const DEFAULT_LINES = [
   { type: "command", text: "$ whoami" },
   { type: "output", text: "Sleima Ducros" },
   { type: "command", text: "$ mission" },
-  { type: "output", text: "Engineering full-stack and AI-driven solutions that are scalable, reliable, and insight-driven." },
+  { type: "output", text: "Engineering full-stack and data-driven web apps that are reliable, scalable, and meaningful." },
   { type: "command", text: "$ status" },
-  { type: "output", text: "Open for collabs." },
+  { type: "output", text: "Open for collaborations and opportunities." },
 ];
 
 export default function TerminalCard({ links = {}, lines = DEFAULT_LINES }) {

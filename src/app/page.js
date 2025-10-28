@@ -17,7 +17,7 @@ import SkillsMatrix from "@/components/SkillsMatrix";
 import TerminalCard from "@/components/TerminalCard";
 import ProjectsRail from "@/components/ProjectsRail";
 
-const HERO_SUBTITLE = "Full-stack developer engineering scalable applications across web, Python, and AI.";
+const HERO_SUBTITLE = "Full-Stack Developer building reliable, data-driven web apps.";
 
 const HERO_MARQUEE = [
   "Portfolio 2025",
@@ -29,64 +29,70 @@ const HERO_MARQUEE = [
 
 const PROJECTS = [
   {
+    title: "Data Pipeline & Monitoring Dashboard",
+    summary:
+      "End-to-end data pipeline built with Python and Streamlit to process, clean, and visualize web server logs in real time.",
+    github: "https://github.com/SleimaD/Data-Pipeline-Dashboard",
+    tags: ["Python", "Pandas", "Streamlit", "Altair", "ETL", "Monitoring"],
+    highlights: [
+      "Built and deployed an end-to-end data pipeline for real-time log visualization and anomaly detection",
+      "Processed thousands of log entries across test runs to ensure reliability and clarity of insights",
+      "Designed for scalability and reusability as a lightweight internal tool",
+    ],
+  },
+  {
     title: "AI Image Generator",
     summary:
-      "Prompt-to-image generator featuring auth, data persistence, and smooth UI flows.",
+      "Prompt-to-image generator featuring user authentication, data persistence, and an intuitive UI — powered by Next.js and Supabase.",
     github: "https://github.com/SleimaD/ai-image-gen.git",
-    tags: ["Next.js", "PostgreSQL", "Supabase", "TypeScript", "AI"],
+    tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "AI"],
     highlights: [
-      "Auth & database setup with Supabase for user storage",
-      "Prompt-to-image generation pipeline with TypeScript/Next.js",
+      "Integrated Supabase for user authentication and image storage",
+      "Built a Next.js pipeline handling prompt-based image generation",
+      "Deployed a smooth, modern interface for real-time AI interactions",
     ],
   },
   {
     title: "Hotel Royella",
     summary:
-      "Booking platform with admin dashboard, staff roles, and accessibility-first flows.",
+      "Full-stack hotel management system with search, booking, and admin automation - built with React, Django, and MySQL.",
     github: "https://github.com/SleimaD/Royella_SleimaDucros.git",
-    tags: ["React", "Python ( Django )", "MySQL", "REST API ", "Authentication"],
+    tags: ["React", "Python (Django)", "MySQL", "REST API", "Full-Stack"],
     highlights: [
-      "Room booking flows with CRUD and role-based permissions",
-      "Admin dashboard for analytics and staff management",
+      "Developed booking flows with CRUD and role-based permissions",
+      "Automated admin dashboards for client and staff management",
+      "Implemented search and validation logic for realistic test scenarios",
     ],
   },
   {
-    title: "Wandel Game",
-    summary: "Narrative-driven text RPG with modular combat and inventory mechanics.",
-    github: "https://github.com/SleimaD/WandelGame.git",
-    tags: ["Python", "OOP", "CLI", "Game Logic"],
-    highlights: [
-      "Python OOP architecture with extendable state machine system",
-      "Turn-based combat and quest branching logic",
-    ],
-  },
-  {
-    title: "SimpleChat AI ",
-    summary: "AI-powered chatbot built for devchallenge.io using JavaScript and APIs.",
+    title: "SimpleChat AI",
+    summary:
+      "AI-powered chatbot developed for DevChallenge.io using JavaScript and REST APIs.",
     github: "https://github.com/SleimaD/simplechat.ai.git",
-    // demo: "",
-    tags: ["JavaScript", "APIs", "AI"],
+    tags: ["JavaScript", "APIs", "AI", "Frontend"],
     highlights: [
-      "Core chatbot logic for handling user prompts and responses",
-      "Lightweight UI for real-time interactions",
+      "Implemented real-time prompt handling and response generation",
+      "Created a clean, responsive interface for conversational UX",
     ],
   },
 ];
 
+
 const ABOUT_CONTENT = {
   headline:
-    "Full-stack developer with expertise spanning web, Python, and applied AI.",
+    "Full-Stack Developer focused on building clean, reliable, and user-friendly web applications.",
   paragraphs: [
 
-    "After completing an intensive full-stack program and an IBM AI Developer certification, I am building my career at the intersection of frontend, backend, and intelligent systems. I focus on delivering scalable, reliable, and well-structured applications that combine technical rigor with user-centered design.",
+    "My main stack is Python and Next.js (React), supported by Supabase, Streamlit, and lightweight AI tools (OpenAI, Hugging Face). I like connecting logic, design, and data to turn ideas into something people can actually use.", 
+    
 
-    "With a background that bridges business informatics and hands-on projects, I aim to create solutions that are accessible, maintainable, and adaptable across domains, from modern web platforms to AI-enhanced tools. Service quality remains central to my mindset: every feature should be purposeful, efficient, and future-proof.",
+    "With a background in Business Informatics and hands-on training through MolenGeek and IBM’s AI Developer program, I work where clarity, structure, and learning meet real-world impact. I care about building things that are purposeful, efficient, and made to last.",
 
   ],
   callouts: [
     {
       label: "Strong suits",
-      items: ["Analytical problem-solving", "Product-focused mindset ", "Rapid learning & adaptability", "Full-stack delivery with reliability"],
+      items: ["Analytical problem-solving", "Product-focused mindset ", "Rapid learning & adaptability"],
     },
     {
       label: "Toolbox",
@@ -113,12 +119,12 @@ const SKILL_GROUPS = [
     skills: ["SQL", "MySQL", "PostgreSQL", "DBeaver"],
   },
   {
-    title: "AI / Data",
+    title: "Data & AI",
     skills: ["Hugging Face", "Generative AI", "NLP", "Prompt Engineering", "Pandas", "NumPy"],
   },
   {
     title: "Ops & Collaboration",
-    skills: ["Git/GitHub", "REST APIs", "Agile / Scrum", "Vercel", "Figma"],
+    skills: ["Git/GitHub", "REST APIs", "Agile / Scrum", "Docker (basics)", "Figma"],
   },
 ];
 
@@ -200,7 +206,7 @@ export default function Home() {
             >
               {HERO_SUBTITLE}
               <span className="mt-3 block text-sm uppercase tracking-[0.45em] text-muted">
-                 Python | React, Next.js | AI Integration
+                 Python | React, Next.js | SQL | AI Integration
               </span>
             </motion.p>
           </div>

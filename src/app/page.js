@@ -17,98 +17,103 @@ import SkillsMatrix from "@/components/SkillsMatrix";
 import TerminalCard from "@/components/TerminalCard";
 import ProjectsRail from "@/components/ProjectsRail";
 
-const HERO_SUBTITLE = "Full-Stack Developer building reliable, data-driven web apps.";
+const HERO_SUBTITLE = "Software Engineer building structured web and data systems with Python & TypeScript.";
 
 const HERO_MARQUEE = [
-  "Portfolio 2025",
-  "Open to collaboration",
+  "Open to roles (Full-Stack / Frontend / Backend / Data)",
   "Based in Belgium",
-  "Multilingual (FR/EN/NL) ",
-  "Agile/Scrum Experience",
+  "Multilingual (FR/EN/NL)",
+  "Agile/Scrum (project-based)",
+  "Available for interviews",
 ];
+
 
 const PROJECTS = [
   {
-    title: "Data Pipeline & Monitoring Dashboard",
+    title: "Field Intelligence Platform (FIP)",
     summary:
-      "End-to-end data pipeline built with Python and Streamlit to process, clean, and visualize web server logs in real time.",
+      "Offline-first, workflow-driven operational platform built as a PWA to simulate low-connectivity industrial constraints.",
+    github: "https://github.com/SleimaD/field-platform", // mets le bon repo si différent
+    tags: ["Django", "PostgreSQL", "Next.js", "PWA", "Offline-first", "Docker"],
+    highlights: [
+      "Designed workflow/state transitions with traceable backend rules and predictable behavior under constraints",
+      "Implemented incremental sync + caching strategy for offline usage scenarios (PWA)",
+      "Containerized with Docker for reproducible environments and consistent local deployment",
+    ],
+  },
+  {
+    title: "Data Pipeline & Monitoring System",
+    summary:
+      "End-to-end log processing pipeline with monitoring views for inspection, drill-down analysis, and anomaly flagging.",
     github: "https://github.com/SleimaD/Data-Pipeline-Dashboard",
-    tags: ["Python", "Pandas", "Streamlit", "Altair", "ETL", "Monitoring"],
+    tags: ["Python", "Pandas", "Streamlit", "ETL", "Monitoring", "Data Quality"],
     highlights: [
-      "Built and deployed an end-to-end data pipeline for real-time log visualization and anomaly detection",
-      "Processed thousands of log entries across test runs to ensure reliability and clarity of insights",
-      "Designed for scalability and reusability as a lightweight internal tool",
+      "Built ingestion → cleaning → transformation pipeline with structured anomaly checks",
+      "Focused on reproducible processing runs and traceability of transformations",
+      "Delivered monitoring UI for fast investigation and validation of pipeline outputs",
     ],
   },
   {
-    title: "AI Image Generator",
+    title: "Applied AI Systems",
     summary:
-      "Prompt-to-image generator featuring user authentication, data persistence, and an intuitive UI — powered by Next.js and Supabase.",
-    github: "https://github.com/SleimaD/ai-image-gen.git",
-    tags: ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "AI"],
+      "Small AI-enabled prototypes integrating LLM/Vision APIs with attention to reliability, constraints, and controlled UX.",
+    github: "https://github.com/SleimaD/ai-image-gen.git", // ou un repo “ai-prototypes” si tu en crées un
+    tags: ["Flask", "Next.js", "OpenAI API", "Hugging Face", "GenAI", "API Integration"],
     highlights: [
-      "Integrated Supabase for user authentication and image storage",
-      "Built a Next.js pipeline handling prompt-based image generation",
-      "Deployed a smooth, modern interface for real-time AI interactions",
-    ],
-  },
-  {
-    title: "Hotel Royella",
-    summary:
-      "Full-stack hotel management system with search, booking, and admin automation - built with React, Django, and MySQL.",
-    github: "https://github.com/SleimaD/Royella_SleimaDucros.git",
-    tags: ["React", "Python (Django)", "MySQL", "REST API", "Full-Stack"],
-    highlights: [
-      "Developed booking flows with CRUD and role-based permissions",
-      "Automated admin dashboards for client and staff management",
-      "Implemented search and validation logic for realistic test scenarios",
-    ],
-  },
-  {
-    title: "SimpleChat AI",
-    summary:
-      "AI-powered chatbot developed for DevChallenge.io using JavaScript and REST APIs.",
-    github: "https://github.com/SleimaD/simplechat.ai.git",
-    tags: ["JavaScript", "APIs", "AI", "Frontend"],
-    highlights: [
-      "Implemented real-time prompt handling and response generation",
-      "Created a clean, responsive interface for conversational UX",
+      "Integrated AI APIs into controlled apps with structured prompts and error-handling paths",
+      "Worked with real constraints (latency, token/rate limits) and validation flows",
+      "Built minimal UIs to test interaction patterns and system behavior end-to-end",
     ],
   },
 ];
 
-
 const ABOUT_CONTENT = {
   headline:
-    "Full-Stack Developer focused on building clean, reliable, and user-friendly web applications.",
+    "Software Engineer working across web, data, and system-oriented applications.",
   paragraphs: [
 
-    "My main stack is Python and Next.js (React), supported by Supabase, Streamlit, and lightweight AI tools (OpenAI, Hugging Face). I like connecting logic, design, and data to turn ideas into something people can actually use.", 
-    
+    "Background in full-stack development with Python and TypeScript, covering backend logic, API design, data processing, and frontend implementation.",
 
-    "With a background in Business Informatics and hands-on training through MolenGeek and IBM’s AI Developer program, I work where clarity, structure, and learning meet real-world impact. I care about building things that are purposeful, efficient, and made to last.",
+    "Focus on building predictable systems: clear workflows, maintainable structure, and interfaces that stay reliable under real constraints (performance, offline usage, integrations).",
+
+    "Recent work includes an offline-first PWA platform, a data pipeline & monitoring system, and applied AI prototypes integrating OpenAI and Hugging Face APIs.",
 
   ],
   callouts: [
     {
-      label: "Strong suits",
-      items: ["Analytical problem-solving", "Product-focused mindset ", "Rapid learning & adaptability"],
+      label: "Engineering Mindset",
+      items: [
+        "System thinking before implementation",
+        "Clear workflows and predictable system behavior",
+        "Designing for reliability and maintainability",
+        "Reducing complexity rather than adding abstraction",
+      ],
     },
     {
-      label: "Toolbox",
-      items: ["Github/Git", "React, Next.js", "Python/Django", "MySQL", "AI & NLP (Hugging Face, Pandas) "],
+      label: "System Building",
+      items: [
+        "Backend logic and API-driven architectures",
+        "Data processing and structured pipelines",
+        "Modern web interfaces with React / Next.js",
+        "Integrating external services and AI APIs",
+      ],
     },
     {
-      label: "Mindset",
-      items: ["Solution-oriented mindset", "Growth & Adaptability ", "Collaboration & initiative", "Resilience & ownership"],
+      label: "Working Style",
+      items: [
+        "Analytical problem decomposition",
+        "Learning quickly in unfamiliar domains",
+        "Pragmatic engineering decisions",
+        "Ownership from concept to working system",
+      ],
     },
-  ],
+  ]
 };
 
 const SKILL_GROUPS = [
   {
     title: "Frontend",
-    skills: ["React", "Next.js", "Tailwind", "TypeScript", "React Native"],
+    skills: ["React", "Next.js", "Tailwind", "TypeScript", "React Native (basic)"],
   },
   {
     title: "Backend",
@@ -116,15 +121,15 @@ const SKILL_GROUPS = [
   },
   {
     title: "Database",
-    skills: ["SQL", "MySQL", "PostgreSQL", "DBeaver"],
+    skills: ["SQL", "MySQL", "PostgreSQL", "Database design"],
   },
   {
     title: "Data & AI",
-    skills: ["Hugging Face", "Generative AI", "NLP", "Prompt Engineering", "Pandas", "NumPy"],
+    skills: ["Pandas", "NumPy", "Hugging Face", "Generative AI", "LLM API Integration", "Prompt Design"],
   },
   {
     title: "Ops & Collaboration",
-    skills: ["Git/GitHub", "REST APIs", "Agile / Scrum", "Docker (basics)", "Figma"],
+    skills: ["Git / GitHub", "REST APIs", "Docker", "Agile / Scrum", "Figma"],
   },
 ];
 
@@ -206,7 +211,7 @@ export default function Home() {
             >
               {HERO_SUBTITLE}
               <span className="mt-3 block text-sm uppercase tracking-[0.45em] text-muted">
-                 Python | React, Next.js | SQL | AI Integration
+                 Python | TypeScript | React/Next.js | SQL | Applied AI
               </span>
             </motion.p>
           </div>
